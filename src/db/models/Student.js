@@ -28,7 +28,7 @@ module.exports = (sequelize, DataTypes) => {
         timestamps: false,
     });
 
-    const Class = sequelize.import('./Class');
+    const Class = (require('./Class'))(sequelize, DataTypes);
 
     Student.belongsTo(Class, {foreignKey: 'class_id'});
 

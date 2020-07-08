@@ -2,7 +2,7 @@ module.exports = {
     // ---------- database connection info ----------
     DB_DIALECT: process.env.DB_DIALECT || 'mysql',
     DB_HOST: process.env.DB_HOST || 'localhost',
-    DB_NAME: process.env.DB_LOGIN || 'database_name',
+    DB_NAME: process.env.DB_NAME || 'database_name',
     DB_PASSWORD: process.env.DB_PASSWORD || 'database_password',
     DB_USERNAME: process.env.DB_USERNAME || 'database_username',
 

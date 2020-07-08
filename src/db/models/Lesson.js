@@ -36,9 +36,9 @@ module.exports = (sequelize, DataTypes) => {
         timestamps: false,
     });
 
-    const Class = sequelize.import('./Class');
-    const Subject = sequelize.import('./Subject');
-    const Teacher = sequelize.import('./Teacher');
+    const Class = (require('./Class'))(sequelize, DataTypes);
+    const Subject = (require('./Subject'))(sequelize, DataTypes);
+    const Teacher = (require('./Teacher'))(sequelize, DataTypes);
 
     Lesson.belongsTo(Class, {foreignKey: 'class_id'});
     Lesson.belongsTo(Subject, {foreignKey: 'subject_id'});
