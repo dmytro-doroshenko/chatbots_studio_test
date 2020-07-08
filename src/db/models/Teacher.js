@@ -28,7 +28,7 @@ module.exports = (sequelize, DataTypes) => {
         timestamps: false,
     });
 
-    const Subject = sequelize.import('./Subject');
+    const Subject = (require('./Subject'))(sequelize, DataTypes);
 
     Teacher.belongsTo(Subject, {foreignKey: 'subject_id'});
 
