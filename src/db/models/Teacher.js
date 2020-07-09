@@ -30,7 +30,7 @@ module.exports = (sequelize, DataTypes) => {
 
     const Subject = (require('./Subject'))(sequelize, DataTypes);
 
-    Teacher.belongsTo(Subject, {foreignKey: 'subject_id'});
+    Teacher.belongsTo(Subject, {foreignKey: 'subject_id', as: 'subject'});
 
     return Teacher;
 };
