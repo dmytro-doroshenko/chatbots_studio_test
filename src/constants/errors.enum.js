@@ -48,4 +48,16 @@ module.exports = {
         message: (id) => `Teacher #${id} not found`,
         code: 40412
     },
+    LESSON_NOT_FOUND_TO_DELETE: {
+        message: (id) => `Lesson #${id} not found. Nothing has been deleted`,
+        code: 40413
+    },
+    LESSON_NOT_FOUND_TO_UPDATE: {
+        message: (id) => `Lesson #${id} not found. Nothing has been updated`,
+        code: 40414
+    },
+    LESSON_NOT_FOUND: {
+        message: (id) => `Lesson #${id} not found`,
+        code: 40415
+    },
 }
