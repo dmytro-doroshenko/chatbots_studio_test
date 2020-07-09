@@ -6,7 +6,7 @@ dotenv.config();
 
 const {PORT} = require('./config');
 const db = require('./db').getInstance();
-const {classRouter, lessonRouter, subjectRouter} = require('./routes');
+const {classRouter, lessonRouter, studentRouter, subjectRouter} = require('./routes');
 
 db.setModels();
 
@@ -18,6 +18,7 @@ app.use(morgan('dev'));
 
 app.use('/classes', classRouter);
 app.use('/lessons', lessonRouter);
+app.use('/students', studentRouter);
 app.use('/subjects', subjectRouter);
 
 app.listen(PORT, err => {

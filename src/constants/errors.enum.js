@@ -24,4 +24,16 @@ module.exports = {
         message: (id) => `Subject #${id} not found`,
         code: 4046
     },
+    STUDENT_NOT_FOUND_TO_DELETE: {
+        message: (id) => `Student #${id} not found. Nothing has been deleted`,
+        code: 4047
+    },
+    STUDENT_NOT_FOUND_TO_UPDATE: {
+        message: (id) => `Student #${id} not found. Nothing has been updated`,
+        code: 4048
+    },
+    STUDENT_NOT_FOUND: {
+        message: (id) => `Student #${id} not found`,
+        code: 4049
+    },
 }
