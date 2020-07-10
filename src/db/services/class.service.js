@@ -25,7 +25,7 @@ module.exports = {
     getClassById: (id) => {
         const ClassModel = db.getModel(CLASS_MODEL);
 
-        return ClassModel.findOne({
+        return ClassModel.findAll({
             where: {id}
         });
     },

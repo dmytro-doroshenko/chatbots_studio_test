@@ -25,7 +25,7 @@ module.exports = {
     getSubjectById: (id) => {
         const SubjectModel = db.getModel(SUBJECT_MODEL);
 
-        return SubjectModel.findOne({
+        return SubjectModel.findAll({
             where: {id}
         });
     },

@@ -36,7 +36,7 @@ module.exports = {
         const TeacherModel = db.getModel(TEACHER_MODEL);
         const SubjectModel = db.getModel(SUBJECT_MODEL);
 
-        return TeacherModel.findOne({
+        return TeacherModel.findAll({
             where: {id},
             attributes: {exclude: ['subject_id']},
             include: [{

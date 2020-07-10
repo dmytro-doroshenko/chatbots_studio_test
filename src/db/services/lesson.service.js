@@ -53,7 +53,7 @@ module.exports = {
         const SubjectModel = db.getModel(SUBJECT_MODEL);
         const TeacherModel = db.getModel(TEACHER_MODEL);
 
-        return LessonModel.findOne({
+        return LessonModel.findAll({
             where: {id},
             attributes: {exclude: ['class_id', 'subject_id', 'teacher_id']},
             include: [
@@ -71,6 +71,7 @@ module.exports = {
                     model: TeacherModel,
                     as: 'teacher',
                     required: true,
+                    attributes: {exclude: ['salary']}
                 }
             ],
             nest: true,
