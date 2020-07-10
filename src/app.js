@@ -21,6 +21,14 @@ app.use('/lessons', lessonRouter);
 app.use('/students', studentRouter);
 app.use('/subjects', subjectRouter);
 app.use('/teachers', teacherRouter);
+app.use('*', (err, req, res, next) => {
+    res
+        .status(err.status || 400)
+        .json({
+            message: err.message,
+            code: err.customErrorCode,
+        })
+})
 
 app.listen(PORT, err => {
     if (err) {
