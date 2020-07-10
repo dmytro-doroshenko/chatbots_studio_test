@@ -1,6 +1,7 @@
 const {Router} = require('express');
 
 const {studentController} = require('../../controllers');
+const {checkIsNewStudentValid, checkIsStudentToUpdateValid} = require('../../middlewares');
 
 const {createStudent, deleteStudent, getAllStudents, getStudentById, updateStudentById} = studentController;
 
@@ -11,8 +12,8 @@ studentRouter.delete('/:id', deleteStudent);
 studentRouter.get('/', getAllStudents);
 studentRouter.get('/:id', getStudentById);
 
-studentRouter.post('/', createStudent);
+studentRouter.post('/', checkIsNewStudentValid, createStudent);
 
-studentRouter.put('/:id', updateStudentById);
+studentRouter.put('/:id', checkIsStudentToUpdateValid, updateStudentById);
 
 module.exports = studentRouter;

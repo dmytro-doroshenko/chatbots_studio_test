@@ -1,6 +1,7 @@
 const {Router} = require('express');
 
 const {classController} = require('../../controllers');
+const {checkIsClassValid} = require('../../middlewares');
 
 const {createClass, deleteClass, getAllClasses, getClassById, updateClassById} = classController;
 
@@ -11,8 +12,8 @@ classRouter.delete('/:id', deleteClass);
 classRouter.get('/', getAllClasses);
 classRouter.get('/:id', getClassById);
 
-classRouter.post('/', createClass);
+classRouter.post('/', checkIsClassValid, createClass);
 
-classRouter.put('/:id', updateClassById);
+classRouter.put('/:id', checkIsClassValid, updateClassById);
 
 module.exports = classRouter;
